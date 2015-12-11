@@ -2,9 +2,12 @@
 
 $recipe = new \Soy\Recipe();
 
-$recipe->component('default', function (\Soy\Codeception\RunTask $runTask) {
+$recipe->component('default', function (\Soy\Codeception\BuildTask $buildTask, \Soy\Codeception\RunTask $runTask) {
+    $buildTask
+        ->setVerbose(true)
+        ->run();
+
     $runTask
-        ->setBinary('codecept')
         ->setCoverageFormats([
             \Soy\Codeception\RunTask::COVERAGE_TEXT,
             \Soy\Codeception\RunTask::COVERAGE_XML => 'my-report.xml',
