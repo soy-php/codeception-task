@@ -32,7 +32,7 @@ trait ConfigTrait
      */
     public function getConfigDirectory()
     {
-        return $this->getConfigDirectory();
+        return $this->config->getConfigDirectory();
     }
 
     /**
@@ -41,7 +41,7 @@ trait ConfigTrait
      */
     public function setConfigDirectory($configDirectory)
     {
-        $this->setConfigDirectory($configDirectory);
+        $this->config->setConfigDirectory($configDirectory);
         return $this;
     }
 
